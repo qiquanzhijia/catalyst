@@ -1,13 +1,14 @@
 from datetime import time
 from itertools import chain
 
+from pandas._libs.tslibs.timestamps import Timestamp
 from pandas.tseries.holiday import (
     GoodFriday,
     USPresidentsDay,
     USLaborDay,
     USThanksgivingDay
 )
-from pandas.tslib import Timestamp
+# from pandas.tslib import Timestamp
 from pytz import timezone
 
 from catalyst.utils.calendars import TradingCalendar

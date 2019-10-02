@@ -16,7 +16,10 @@
 import pandas as pd
 import six
 from toolz import curry
+# from toolz.curried import (take, first, second, sorted, merge_with, reduce,
+#                            merge, operator as cop)
 from toolz.curried.operator import add as prepend
+# from toolz.curried import map
 
 COLUMN_NAMES = {
     "V39063": '1month',

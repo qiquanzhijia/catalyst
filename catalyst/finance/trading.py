@@ -16,7 +16,8 @@ from functools import partial
 
 import logbook
 import pandas as pd
-from pandas.tslib import normalize_date
+# from pandas.tslib import normalize_date
+from pandas._libs.tslibs.conversion import normalize_date
 from six import string_types
 from sqlalchemy import create_engine
 

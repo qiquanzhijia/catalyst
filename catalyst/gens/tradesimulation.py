@@ -14,7 +14,7 @@
 # limitations under the License.
 from contextlib2 import ExitStack
 from logbook import Logger, Processor
-from pandas.tslib import normalize_date
+from pandas._libs.tslibs.conversion  import normalize_date
 from catalyst.protocol import BarData
 from catalyst.utils.api_support import ZiplineAPI
 from six import viewkeys

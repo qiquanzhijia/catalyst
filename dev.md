@@ -24,6 +24,11 @@ windows 安装[参考](https://blog.csdn.net/Kaige_Zhao/article/details/80315697
 D:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\bin\HostX64\x64
 
 1. 打开conda命令行，activate catalyst
-2. 运行cl
+2. 运行cl测试
 3. 转到安装目录，
-4. 最后运行python setuo.py clean --all install
+4. 最后运行
+````cython
+python setuo.py clean --all install
+
+python setup.py build_ext --inplace --force
+````

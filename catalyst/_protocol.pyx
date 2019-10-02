@@ -16,9 +16,10 @@ import warnings
 from contextlib import contextmanager
 from functools import wraps
 
-from pandas.tslib import normalize_date
+
 import pandas as pd
 import numpy as np
+from pandas._libs.tslibs.conversion import normalize_date
 
 from six import iteritems, PY2, string_types
 from cpython cimport bool

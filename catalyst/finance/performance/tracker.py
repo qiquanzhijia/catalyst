@@ -62,7 +62,7 @@ from __future__ import division
 import logbook
 
 import pandas as pd
-from pandas.tseries.tools import normalize_date
+from pandas._libs.tslibs.conversion  import normalize_date
 
 from catalyst.finance.performance.period import PerformancePeriod
 from catalyst.errors import NoFurtherDataError

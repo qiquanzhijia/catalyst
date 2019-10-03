@@ -643,6 +643,7 @@ class TradingCalendar(with_metaclass(ABCMeta)):
         # `market_open` and `market_close` should be timezone aware, but pandas
         # 0.16.1 does not appear to support this:
         # http://pandas.pydata.org/pandas-docs/stable/whatsnew.html#datetime-with-tz  # noqa
+        # https://ttwoo.net/297.html
         return (
             sched.at[session_label, 'market_open'].tz_convert('UTC'),
             sched.at[session_label, 'market_close'].tz_convert('UTC'),
@@ -652,13 +653,13 @@ class TradingCalendar(with_metaclass(ABCMeta)):
         return self.schedule.at[
             session_label,
             'market_open'
-        ].tz_convert('UTC')
+        ].tz_localize('UTC')
 
     def session_close(self, session_label):
         return self.schedule.at[
             session_label,
             'market_close'
-        ].tz_convert('UTC')
+        ].tz_localize('UTC')
 
     def session_opens_in_range(self, start_session_label, end_session_label):
         return self.schedule.loc[

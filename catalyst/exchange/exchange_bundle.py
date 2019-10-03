@@ -50,6 +50,7 @@ class ExchangeBundle:
         self._readers = dict()
         self.calendar = get_calendar('OPEN')
         self.exchange = None
+        self.proxies = None
 
     def get_reader(self, data_frequency, path=None):
         """
@@ -333,7 +334,7 @@ class ExchangeBundle:
 
     def ingest_ctable(self, asset, data_frequency, period,
                       writer, empty_rows_behavior='strip',
-                      duplicates_threshold=100, cleanup=False):
+                      duplicates_threshold=100, cleanup=False, proxies=None):
         """
         Merge a ctable bundle chunk into the main bundle for the exchange.
 
@@ -362,7 +363,8 @@ class ExchangeBundle:
             exchange_name=self.exchange_name,
             symbol=asset.symbol,
             data_frequency=data_frequency,
-            period=period
+            period=period,
+            proxies=proxies
         )
 
         reader = self.get_reader(data_frequency, path=path)
@@ -559,7 +561,7 @@ class ExchangeBundle:
 
     def ingest_assets(self, assets, data_frequency, start_dt=None, end_dt=None,
                       show_progress=False, show_breakdown=False,
-                      show_report=False):
+                      show_report=False, proxies=None):
         """
         Determine if data is missing from the bundle and attempt to ingest it.
 
@@ -640,7 +642,8 @@ class ExchangeBundle:
                             period=chunk['period'],
                             writer=writer,
                             empty_rows_behavior='strip',
-                            cleanup=True
+                            cleanup=True,
+                            proxies=proxies
                         )
 
         if show_report and len(problems) > 0:
@@ -786,7 +789,7 @@ class ExchangeBundle:
 
     def ingest(self, data_frequency, include_symbols=None,
                exclude_symbols=None, start=None, end=None, csv=None,
-               show_progress=True, show_breakdown=True, show_report=True):
+               show_progress=True, show_breakdown=True, show_report=True, proxies=None):
         """
         Inject data based on specified parameters.
 
@@ -821,7 +824,8 @@ class ExchangeBundle:
                     end_dt=end,
                     show_progress=show_progress,
                     show_breakdown=show_breakdown,
-                    show_report=show_report
+                    show_report=show_report,
+                    proxies=proxies
                 )
 
     def get_history_window_series_and_load(self,

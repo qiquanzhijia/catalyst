@@ -824,10 +824,15 @@ def remote_status(ctx, algo_id, data_output, log_output):
     default=False,
     help='Report potential anomalies found in data bundles.'
 )
+@click.option(
+    '--proxies',
+    default=None,
+    help='proxy to download data.',
+)
 @click.pass_context
 def ingest_exchange(ctx, exchange_name, data_frequency, start, end,
                     include_symbols, exclude_symbols, csv, show_progress,
-                    verbose, validate):
+                    verbose, validate, proxies):
     """
     Ingest data for the given exchange.
     """
@@ -854,7 +859,8 @@ def ingest_exchange(ctx, exchange_name, data_frequency, start, end,
         show_progress=show_progress,
         show_breakdown=verbose,
         show_report=validate,
-        csv=csv
+        csv=csv,
+        proxies=proxies
     )
 
 

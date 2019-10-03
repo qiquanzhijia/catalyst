@@ -172,7 +172,7 @@ def download_with_progress(url, chunk_size, **progress_kwargs):
     return data
 
 
-def download_without_progress(url):
+def download_without_progress(url, proxies=None):
     """
     Download data from a URL, returning a BytesIO containing the loaded data.
 
@@ -186,7 +186,11 @@ def download_without_progress(url):
     data : BytesIO
         A BytesIO containing the downloaded data.
     """
-    resp = requests.get(url)
+    myproxies = {}
+    if proxies != '':
+        myproxies['http'] = proxies
+        myproxies['https'] = proxies
+    resp = requests.get(url, proxies=myproxies)
     resp.raise_for_status()
     return BytesIO(resp.content)
 

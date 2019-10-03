@@ -33,5 +33,35 @@ python setuo.py clean --all install
 python setup.py build_ext --inplace --force
 ```
 
+catalyst ingest-exchange -x bitfinex -f minute -s 2015 -i btc_usd
+
+  -x, --exchange-name TEXT        The name of the exchange bundle to ingest.
+  -f, --data-frequency [minute,daily|daily|daily,minute|minute]
+                                  The data frequency of the desired OHLCV
+                                  bars.  [default: daily]
+  -s, --start DATE                The start date of the data range. (default:
+                                  one year from end date)
+  -e, --end DATE                  The end date of the data range. (default:
+                                  today)
+  -i, --include-symbols TEXT      A list of symbols to ingest (optional comma
+                                  separated list)
+  --exclude-symbols TEXT          A list of symbols to exclude from the
+                                  ingestion (optional comma separated list)
+  --csv TEXT                      The path of a CSV file containing the data.
+                                  If specified, start, end, include-symbols
+                                  and exclude-symbols will be ignored.
+                                  Instead,all data in the file will be
+                                  ingested.
+  --show-progress / --no-show-progress
+                                  Print progress information to the terminal.
+  --verbose / --no-verbose`       Show a progress indicator for every currency
+                                  pair.
+  --validate / --no-validate`     Report potential anomalies found in data
+                                  bundles.
+  --help                          Show this message and exit.
+  
+
 https://github.com/enigmampc/catalyst/issues/503 Use Catalyst with a proxy
 
+
+https://s3.amazonaws.com/enigmaco/catalyst-bundles/exchange-bitfinex/bitfinex-minute-btc_usd-2015-03.tar.gz

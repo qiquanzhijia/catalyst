@@ -12,7 +12,7 @@ EXCHANGE_NAMES = ['bitfinex', 'bittrex', 'poloniex', 'binance']
 API_URL = 'http://data.enigma.co/api/v1'
 
 
-def get_bcolz_chunk(exchange_name, symbol, data_frequency, period):
+def get_bcolz_chunk(exchange_name, symbol, data_frequency, period, proxies):
     """
     Download and extract a bcolz bundle.
 
@@ -37,14 +37,14 @@ def get_bcolz_chunk(exchange_name, symbol, data_frequency, period):
         period=period
     )
     path = os.path.join(root, name)
-
+# 进行数据下载
     if not os.path.isdir(path):
         url = 'https://s3.amazonaws.com/enigmaco/catalyst-bundles/' \
               'exchange-{exchange}/{name}.tar.gz'.format(
                 exchange=exchange_name,
                 name=name)
 
-        bytes = download_without_progress(url)
+        bytes = download_without_progress(url, proxies)
         with tarfile.open('r', fileobj=bytes) as tar:
             tar.extractall(path)
 

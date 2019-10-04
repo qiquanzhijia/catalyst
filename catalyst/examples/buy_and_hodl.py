@@ -83,8 +83,8 @@ def analyze(context=None, results=None):
     ax2.set_ylabel('{asset}\n(USD)'.format(asset=context.ASSET_NAME))
     results[['price']].plot(ax=ax2)
 
-    trans = results.ix[[t != [] for t in results.transactions]]
-    buys = trans.ix[
+    trans = results.loc[[t != [] for t in results.transactions]]
+    buys = trans.loc[
         [t[0]['amount'] > 0 for t in trans.transactions]
     ]
     ax2.scatter(

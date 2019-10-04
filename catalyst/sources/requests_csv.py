@@ -354,7 +354,8 @@ class PandasCSV(with_metaclass(ABCMeta, object)):
                     asset = numpy.nan
 
                 # Assign the resolved asset to the cell
-                df.ix[row_idx, 'sid'] = asset
+                # print(data.loc[data["w"]>5,"w"])
+                df.loc[row_idx, 'sid'] = asset
 
             # Filter out rows containing symbols that we failed to find.
             length_before_drop = len(df)

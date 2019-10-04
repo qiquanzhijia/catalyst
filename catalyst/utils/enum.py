@@ -40,8 +40,7 @@ _inttypes_map = {
 _inttypes = list(
     pd.Series(_inttypes_map).reindex(
         range(max(_inttypes_map.keys())),
-        method='bfill',
-    ),
+    ).bfill(),
 )
 
 # 查找资料后自己初步理解为：为了重新索引方法，你的索引必须是有序/单调/递增的顺序，因为列也是重新索引的，而不是单调增加或减少。

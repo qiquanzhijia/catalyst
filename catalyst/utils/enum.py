@@ -40,7 +40,7 @@ _inttypes_map = {
 _inttypes = list(
     pd.Series(_inttypes_map).reindex(
         range(max(_inttypes_map.keys())),
-        # method='bfill',
+        method='bfill',
     ),
 )
 

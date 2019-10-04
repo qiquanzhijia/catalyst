@@ -556,7 +556,7 @@ def live(ctx,
 @click.option(
     '-b',
     '--bundle',
-    default='poloniex',
+    default='bitfinex',
     metavar='BUNDLE-NAME',
     show_default=True,
     help='The data bundle to use for the simulation.',

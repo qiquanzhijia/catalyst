@@ -63,7 +63,7 @@ catalyst ingest-exchange -x bitfinex -f minute -s 2015 -i btc_usd
 
 https://github.com/enigmampc/catalyst/issues/503 Use Catalyst with a proxy
 
-
+https://s3.amazonaws.com/enigmaco/catalyst-exchanges/bitfinex/symbols.json
 https://s3.amazonaws.com/enigmaco/catalyst-bundles/exchange-bitfinex/bitfinex-minute-btc_usd-2015-03.tar.gz
 
 https://github.com/pandas-dev/pandas/pull/25263/files/e0e3e254a3cc95cea4a70cae5488fb1fd8367c61
@@ -71,6 +71,8 @@ https://github.com/pandas-dev/pandas/pull/25263/files/e0e3e254a3cc95cea4a70cae54
 pandas升级带来很多问题
 ```
 catalyst ingest-exchange -x bitfinex -i btc_usd  --proxies socks5://127.0.0.1:2080
+
+catalyst ingest-exchange -x bitfinex -f minute -i btc_usd -s 20171230  -e 20180201 --proxies socks5://127.0.0.1:2080
 
  catalyst ingest-exchange -x bitfinex -f minute -s 2019 -i btc_usd --proxies socks5://127.0.0.1:2080 --show-progress
 

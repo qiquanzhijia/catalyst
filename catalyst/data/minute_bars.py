@@ -661,7 +661,9 @@ class BcolzMinuteBarWriter(object):
             # If there is no data, determine how many days to add so that
             # desired days are written to the correct slots.
             days_to_zerofill = tds[tds.slice_indexer(end=date)]
+            print("{0} is Nat".format(str(date)))
         else:
+            print(str(date))
             days_to_zerofill = tds[tds.slice_indexer(
                 start=pd.to_datetime(str(last_date + tds.freq), utc=True),
                 end=str(date))]

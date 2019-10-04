@@ -70,11 +70,11 @@ class CCXT(Exchange):
                 'password': password
             }
 
-            if ('HTTP_PROXY' in os.environ or 'HTTPS_PROXY' in os.environ):
+            if 'HTTP_PROXY' in os.environ or 'HTTPS_PROXY' in os.environ:
                 exchange_config['proxies'] = {}
-                if ('HTTP_PROXY' in os.environ):
+                if 'HTTP_PROXY' in os.environ:
                     exchange_config['proxies']['http'] = os.environ['HTTP_PROXY']
-                if ('HTTPS_PROXY' in os.environ):
+                if 'HTTPS_PROXY' in os.environ:
                     exchange_config['proxies']['https'] = os.environ['HTTPS_PROXY']
             if https_proxy != '':
                 exchange_config['proxies'] = {}
@@ -82,14 +82,6 @@ class CCXT(Exchange):
                 exchange_config['proxies']['https'] = https_proxy
 
             self.api = exchange_attr(exchange_config)
-
-
-            # self.api = exchange_attr({
-            #     'apiKey': key,
-            #     'secret': secret,
-            #     'password': password,
-            # })
-
             self.api.enableRateLimit = True
 
         except Exception:

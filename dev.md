@@ -59,9 +59,18 @@ catalyst ingest-exchange -x bitfinex -f minute -s 2015 -i btc_usd
   --validate / --no-validate`     Report potential anomalies found in data
                                   bundles.
   --help                          Show this message and exit.
-  
+
 
 https://github.com/enigmampc/catalyst/issues/503 Use Catalyst with a proxy
 
 
 https://s3.amazonaws.com/enigmaco/catalyst-bundles/exchange-bitfinex/bitfinex-minute-btc_usd-2015-03.tar.gz
+
+https://github.com/pandas-dev/pandas/pull/25263/files/e0e3e254a3cc95cea4a70cae5488fb1fd8367c61
+
+pandas升级带来很多问题
+```
+ catalyst ingest-exchange -x bitfinex -f minute -s 2019 -i btc_usd --proxies socks5://127.0.0.1:2080 --show-progress
+
+ catalyst ingest-exchange -x binance -f minute -s 2019 -i btc_usd --proxies socks5://127.0.0.1:2080
+```

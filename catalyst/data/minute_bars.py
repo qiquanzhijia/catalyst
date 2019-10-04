@@ -631,25 +631,40 @@ class BcolzMinuteBarWriter(object):
             The date used to calculate how many slots to be pad.
             The padding is done through the date, i.e. after the padding is
             done the `last_date_in_output_for_sid` will be equal to `date`
+
+        pd.to_datetime(df_ts.index, utc=True)
         """
         table = self._ensure_ctable(sid)
 
+        # last_date = self.last_date_in_output_for_sid(sid)
         last_date = self.last_date_in_output_for_sid(sid)
-
         tds = self._session_labels
 
         if date <= last_date or date < tds[0]:
             # No need to pad.
             return
 
-        if last_date == pd.NaT:
+        # from datetime import datetime
+        # if isinstance(str(last_date + tds.freq), (str, datetime)) and isinstance(str(date), (str, datetime)):
+        #     try:
+        #         from pandas._libs.tslibs.timestamps import Timestamp
+        #         ts_start = pd.to_datetime(str(last_date), utc=True).tz_convert('UTC')
+        #         ts_end = Timestamp(str(date))
+        #     except (ValueError, TypeError):
+        #         pass
+        #     else:
+        #         from pandas._libs.tslibs.timezones import tz_compare
+        #         if not tz_compare(ts_start.tzinfo, ts_end.tzinfo):
+        #             print("Waring: Both dates must have the same UTC offset")
+
+        if last_date == pd.NaT or str(last_date) == "NaT":
             # If there is no data, determine how many days to add so that
             # desired days are written to the correct slots.
             days_to_zerofill = tds[tds.slice_indexer(end=date)]
         else:
             days_to_zerofill = tds[tds.slice_indexer(
-                start=last_date + tds.freq,
-                end=date)]
+                start=pd.to_datetime(str(last_date + tds.freq), utc=True),
+                end=str(date))]
 
         self._zerofill(table, len(days_to_zerofill))
 

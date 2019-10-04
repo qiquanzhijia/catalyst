@@ -859,10 +859,10 @@ class TradingAlgorithm(object):
                 daily_perfs.append(perf['daily_perf'])
             else:
                 self.risk_report = perf
-
+        # thanks for https://github.com/quantopian/trading_calendars/pull/48
         daily_dts = pd.DatetimeIndex(
-            [p['period_close'] for p in daily_perfs], tz='UTC'
-        )
+            [p['period_close'] for p in daily_perfs], tz=pytz.UTC)
+
         daily_stats = pd.DataFrame(daily_perfs, index=daily_dts)
 
         return daily_stats

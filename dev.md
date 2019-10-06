@@ -1,4 +1,4 @@
-参考
+it参考
 
 https://stackoverflow.com/questions/40018405/cython-cannot-open-include-file-io-h-no-such-file-or-directory
 
@@ -76,5 +76,5 @@ catalyst ingest-exchange -x bitfinex -f minute -i btc_usd -s 20171230  -e 201802
 
  catalyst ingest-exchange -x bitfinex -f minute -s 2019 -i btc_usd --proxies socks5://127.0.0.1:2080 --show-progress
 
- catalyst ingest-exchange -x binance -f minute -s 2019 -i btc_usd --proxies socks5://127.0.0.1:2080
+ catalyst ingest-exchange -x binance -f minute -s 2019 -i btc_usd --proxies socks5://127.0.0.1:2080  --show-progress
 ```

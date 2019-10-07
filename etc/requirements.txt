@@ -66,7 +66,7 @@ Mako==1.1.0
 # Asset writer and finder
 sqlalchemy==1.2.18
 # For asset db management
-alembic==1.2.0
+alembic==1.1.0
 
 # for intervaltree
 sortedcontainers==2.1.0
@@ -84,7 +84,7 @@ certifi==2019.9.11
 
 #Catalyst dependencies
 ccxt==1.18.1213
-boto3==1.9.234
+boto3==1.5.27
 redo==2.0.1
 web3==4.4.1; python_version > '3.4'
 requests-toolbelt==0.8.0

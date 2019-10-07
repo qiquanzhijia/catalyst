@@ -24,7 +24,8 @@ import logbook
 import toolz
 from logbook import TestHandler, WARNING
 from mock import MagicMock
-from nose_parameterized import parameterized
+from parameterized import parameterized
+from pandas.errors import PerformanceWarning
 from six import iteritems, itervalues, string_types
 from six.moves import range
 from testfixtures import TempDirectory
@@ -32,11 +33,11 @@ from testfixtures import TempDirectory
 import numpy as np
 import pandas as pd
 import pytz
-from pandas.core.common import PerformanceWarning
+# from pandas.core.common import PerformanceWarning
 
 from catalyst import run_algorithm
 from catalyst import TradingAlgorithm
-from catalyst.api import FixedSlippage
+# from catalyst.api import FixedSlippage
 from catalyst.assets import Equity, Future, Asset
 from catalyst.assets.continuous_futures import ContinuousFuture
 from catalyst.assets.synthetic import (

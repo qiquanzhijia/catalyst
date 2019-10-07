@@ -4,7 +4,7 @@ Utilities for validating inputs to user-facing API functions.
 from textwrap import dedent
 from types import CodeType
 from functools import wraps
-from inspect import getargspec
+from inspect import getargspec, getfullargspec, signature
 from uuid import uuid4
 
 from toolz.curried.operator import getitem
@@ -80,6 +80,8 @@ def preprocess(*_unused, **processors):
         raise TypeError("preprocess() doesn't accept positional arguments")
 
     def _decorator(f):
+        # eprecationWarning: inspect.getargspec() is deprecated since Python 3.0, use inspect.signature() or
+        # inspect.getfullargspec()
         args, varargs, varkw, defaults = argspec = getargspec(f)
         if defaults is None:
             defaults = ()

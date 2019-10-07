@@ -1,4 +1,4 @@
-it参考
+
 
 https://stackoverflow.com/questions/40018405/cython-cannot-open-include-file-io-h-no-such-file-or-directory
 
@@ -20,7 +20,7 @@ C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include 包括到inclue�
 
 <class 'dict'>: {'dev': ['coverage==4.4.1', 'nose==1.3.7', 'nose-parameterized==0.5.0', 'nose-ignore-docstring==0.2', 'termcolor==1.1.0', 'nose-timer==0.5.0', 'xlrd==0.9.4', 'funcsigs==1.0.2', 'Pygments==2.0.2', 'alabaster==0.7.6', 'babel==1.3', 'docutils==0.12', 'snowballstemmer==1.2.0', 'sphinx-rtd-theme==0.1.8', 'sphinx==1.6.7', 'pbr==1.10.0', 'mock==2.0.0', 'testfixtures==4.1.2', 'flake8==3.3.0', 'mccabe==0.6.0', 'pycodestyle==2.3.1', 'pyflakes==1.5.0', 'pyandoc==0.0.1', 'docopt==0.6.2', 'numpydoc==0.5', 'mistune==0.7', 'certifi==2018.1.18', 'tornado==4.2.1', 'pyparsing==2.2.0', 'cycler==0.10.0', 'matplotlib==2.2.2', 'mpl_finance==0.10.0', 'Markdown==2.6.2', 'futures==3.0.5', 'requests-futures==0.9.7', 'piprot==0.9.6', 'responses==0.4.0'], 'talib': ['TA-Lib==0.4.9'], 'all': ['coverage==4.4.1', 'nose==1.3.7', 'nose-parameterized==0.5.0', 'nose-ignore-docstring==0.2', 'termcolor==1.1.0', 'nose-timer==0.5.0', 'xlrd==0.9.4', 'funcsigs==1.0.2', 'Pygments==2.0.2', 'alabaster==0.7.6', 'babel==1.3', 'docutils==0.12', 'snowballstemmer==1.2.0', 'sphinx-rtd-theme==0.1.8', 'sphinx==1.6.7', 'pbr==1.10.0', 'mock==2.0.0', 'testfixtures==4.1.2', 'flake8==3.3.0', 'mccabe==0.6.0', 'pycodestyle==2.3.1', 'pyflakes==1.5.0', 'pyandoc==0.0.1', 'docopt==0.6.2', 'numpydoc==0.5', 'mistune==0.7', 'certifi==2018.1.18', 'tornado==4.2.1', 'pyparsing==2.2.0', 'cycler==0.10.0', 'matplotlib==2.2.2', 'mpl_finance==0.10.0', 'Markdown==2.6.2', 'futures==3.0.5', 'requests-futures==0.9.7', 'piprot==0.9.6', 'responses==0.4.0', 'TA-Lib==0.4.9']}
 
-windows 安装[参考](https://blog.csdn.net/Kaige_Zhao/article/details/80315697)
+windows 安装[参参参](https://blog.csdn.net/Kaige_Zhao/article/details/80315697)
 D:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\bin\HostX64\x64
 
 1. 打开conda命令行，activate catalyst

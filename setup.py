@@ -33,6 +33,8 @@ from setuptools import (
 import versioneer
 
 
+import numpy as np
+
 class LazyBuildExtCommandClass(dict):
     """
     Lazy command class that defers operations requiring Cython and numpy until
@@ -296,6 +298,7 @@ setup(
     author_email='dev@enigma.co',
     packages=find_packages(include=['catalyst', 'catalyst.*']),
     ext_modules=ext_modules,
+    include_dirs=[np.get_include()],
     include_package_data=True,
     package_data={root.replace(os.sep, '.'):
                       ['*.pyi', '*.pyx', '*.pxi', '*.pxd']

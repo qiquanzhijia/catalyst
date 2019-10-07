@@ -36,7 +36,7 @@ import numpy as np
 import pandas as pd
 from pandas.util.testing import (
     assert_frame_equal,
-    assert_panel_equal,
+    # assert_panel_equal,
     assert_series_equal,
     assert_index_equal,
 )
@@ -479,10 +479,10 @@ assert_frame_equal = _register_assert_equal_wrapper(
     pd.DataFrame,
     assert_frame_equal,
 )
-assert_panel_equal = _register_assert_equal_wrapper(
-    pd.Panel,
-    assert_panel_equal,
-)
+# assert_panel_equal = _register_assert_equal_wrapper(
+#     pd.Panel,
+#     assert_panel_equal,
+# )
 assert_series_equal = _register_assert_equal_wrapper(
     pd.Series,
     assert_series_equal,

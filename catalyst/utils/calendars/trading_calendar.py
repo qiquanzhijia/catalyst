@@ -15,7 +15,7 @@
 from abc import ABCMeta, abstractproperty
 from lru import LRU
 import warnings
-
+# cython: language_level=3
 from pandas.tseries.holiday import AbstractHolidayCalendar
 from six import with_metaclass
 from numpy import searchsorted
@@ -27,6 +27,10 @@ from pandas import (
     DatetimeIndex,
 )
 from pandas.tseries.offsets import CustomBusinessDay
+import pyximport  # "script_args":["--compiler=mingw32"],
+pyximport.install(setup_args={"script_args":["--compiler=mingw32"],
+                              "include_dirs":np.get_include()},
+                  reload_support=True)
 from catalyst.utils.calendars._calendar_helpers import (
     next_divider_idx,
     previous_divider_idx,
